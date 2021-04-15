@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Feed</h1>
+
+    <ul>
+    {% for post in posts %}
+        <li>Name: {{ post.title }} --- Created: {{ post.created }} --- Modified: {{ post.modified }}</li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
