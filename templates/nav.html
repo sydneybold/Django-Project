@@ -1,0 +1,34 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg static-top navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url "posts:feed" %}">
+      <img src="{% static "img/instagram.jpg" %}" alt="Instagram" height="90"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#instagramNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="instagramNav">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="{% url "users:detail" user.pk %}">
+            <i class="fas fa-user-circle"></i>
+            <span>View Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url "posts:create_post" %}">
+            <i class="fas fa-plus mr-1"></i>
+            <span>Add Post</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url "users:logout" %}">
+            <i class="fas fa-sign-out-alt mr-1"></i>
+            <span>Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
