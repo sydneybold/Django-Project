@@ -1,34 +1,67 @@
 html, body {
-    background: #fafafa;
-    height: 100%;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
+  background: #EFF5F8;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.border-double{
+  border-style: double;
 }
 
 .post-container {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
+  background: #fff;
+  border: 2px solid #e6e6e6;
+  border-radius: 3px;
 }
 
-.nav-icon a {
-    color: #262626;
-    font-size: 1.3em;
-    display: block;
-    margin-top: .2em;
-    margin-left: 1.2em;
-    font-weight: 100;
+.navbar {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #5EA4BD;
+
+  margin-bottom: 20px;
+
+  background-color: #D1E6F0;
 }
-.nav-icon a:hover {
-    color: #1d5e72;;
+
+.navbar .navbar-nav .nav-item span {
+  font-size: 20px;
 }
+
+.navbar .navbar-nav .nav-item i, .navbar .navbar-nav .nav-item span {
+  color: #5EA4BD;
+}
+
+.navbar .navbar-nav .nav-item {
+  padding: 10px 0px;
+  margin: 0px 20px;
+}
+
+.navbar .navbar-nav .nav-item:hover {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5EA4BD;
+
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5EA4BD;
+}
+
+.card-body .btn {
+  background: #bd5e81;
+  outline-color: #bd5e81;
+  color: white;
+  font-size: 20px;
+}
+
 #profile-box {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.0975);
-    border-radius: 1px;
-    margin-top: 6em;
-}
-
-#user-posts #post-thumb {
-    background: #fff;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.0975);
+  border-radius: 1px;
+  margin-top: 6em;
 }
