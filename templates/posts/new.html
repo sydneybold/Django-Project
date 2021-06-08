@@ -7,28 +7,15 @@
 {% block container %}
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-6 pt-3 pb-3" id="profile box">
-        <h3 class="mb-4">Post a new photo!</h3>
-        <form method="Post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <input type="hidden" name="user" value="{{ request.user.pk }}" />
-          <input type="hidden" name="profile" value="{{ request.user.profile.pk }}" />
-
-          <div class="form-group my-5">
-            <label>Choose your photo:</label>
-            <input class="form-control" type="file" name="photo" placeholder="photo" />
-            <div class="invalid-feedback">
-            </div>
-          </div>
-
-          <div class="form-group my-5">
-            <input class="form-control" type="text" name="title" placeholder="Write your caption..." />
-            <div class="invalid-feedback">
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block mt-5">Publish!</button>
-        </form>
+      <div class="card mx-auto mt-5" style="width: 600px;">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">Post a new photo!</h4>
+          <form method="Post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Post</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
