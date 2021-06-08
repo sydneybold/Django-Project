@@ -12,10 +12,10 @@
         {% for post in posts %}
           {% include 'posts/post_card.html' %}
         {% endfor %}
+      </div>
     {% else %}
       {% include 'users/logged_out.html' %}
     {% endif %}
-      </div>
   </div>
   {% if user.is_authenticated %}
     {% include 'pagination.html' %}
