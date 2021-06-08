@@ -1,22 +1,25 @@
 <div class="col-sm-12 col-md-8 offset-md-2 mt-5 p-0 post-container">
-  <a href="{% url "posts:detail" post.profile.user.username %}" style='color: inherit;text-decoration: inherit;'>
+  <a href="{% url "users:detail" post.user.pk %}">
     <div class="media pt-3 pl-3 pb-1">
-      <img class="mr-3 rounded-circle" height="35" src="{{ post.profile.picture.url }}" alt="{{ post.user.get_full_name }}">
+      <img class="mr-3 rounded" height="60" src="{{ post.user.profile.picture.url }}" alt="{{ post.user.get_full_name }}">
       <div class="media-body">
-        <h5 style="mt-0;">{{ post.profile.user.get_username }}</h5>
+        <h5 class="text-dark">@{{ post.user.get_username }}</h5>
       </div>
     </div>
   </a>
-  <a href="{% url "posts:detail" post.id %}">
+  <a href="{% url "posts:detail" post.pk %}">
     <img style="width: 100%;" src="{{ post.photo.url }}" alt="{{ post.caption }}">
   </a>
-  <p class="mt-1 ml-2" >
+  <div class="m-2" >
     <a href="" style="color: #000; font-size: 20px;">
       <i class="far fa-heart"></i>
-    </a> 30 likes
-  </p>
-  <div class="ml-2 mt-0 mb-2">
-    <p class="lead"><strong> {{ post.profile.user.get_username }} </strong> - {{ post.caption }} </p>
+    </a>
+    <span>30 likes</span>
+  </div>
+  <div class="p-3 border-double border-right-0 border-left-0">
+    <span><strong> {{ post.user.get_username }} </strong> - {{ post.caption }} </span>
+  </div>
+  <div class="m-2">
     <small>{{ post.modified }}</small>
   </div>
 </div>
