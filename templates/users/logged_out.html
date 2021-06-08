@@ -1,0 +1,15 @@
+{% load static %}
+<div class="card mx-auto mt-5" style="width: 600px;">
+  <img class="card-img-top mx-auto mb-3 mt-3" src="{% static "img/instagram.jpg" %}" alt="Instagram" style="width: 400px;">
+  <div class="card-body">
+    <h4 class="card-title text-center mb-4">You are logged out</h4>
+    <a href="{% url 'users:login' %}" class="btn btn-block" role="button">
+      <i class="fas fa-sign-in-alt mr-1"></i>
+      <span>Log In</span>
+    </a>
+    <a href="{% url 'users:signup' %}" class="btn btn-block mt-3" role="button">
+      <i class="fas fa-user-plus mr-1"></i>
+      <span>Sign Up</span>
+    </a>
+  </div>
+</div>
