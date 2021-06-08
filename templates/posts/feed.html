@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_content %}
-  <title>Instagram Feed!</title>
+  <title>Instagram Feed</title>
 {% endblock%}
 
 {% block container %}
@@ -17,5 +17,7 @@
     {% endif %}
       </div>
   </div>
-    <!-- {% include 'pagination.html' %} -->
+  {% if user.is_authenticated %}
+    {% include 'pagination.html' %}
+  {% endif %}
 {% endblock %}
