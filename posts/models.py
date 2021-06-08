@@ -1,10 +1,11 @@
 from django.db import models
-from users.models import Profile
+from django.contrib.auth.models import User
+
 
 class Post(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
-    caption = models.CharField(max_length=255)
+    caption = models.CharField(max_length=255, primary_key=True, default=' ')
     photo = models.ImageField(upload_to='posts/photos')
 
     created = models.DateTimeField(auto_now_add=True)
