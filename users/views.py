@@ -25,18 +25,15 @@ class SignupView(generic.CreateView):
     def form_valid(self, form):
         user = form.save(commit=False)
         password = form.cleaned_data['password']
-        password_confirmation = form.cleaned_data['password_confirmation']
-        if password != password_confirmation:
-            messages.error(self.request, "Passwords do not match", extra_tags="alert alert-danger")
-            return render(self.request, self.template_name, {'form': form})
+
         user.set_password(password)
         user.save()
-
         Profile.objects.create(user=user)
 
         return super(SignupView, self).form_valid(form)
 
     def form_invalid(self, form):
+        print (form.errors)
         return HttpResponse("form is invalid.. this is just an HttpResponse object")
 
 class LoginView(auth_views.LoginView):
@@ -64,5 +61,6 @@ class UserDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         user_name = self.get_object()
         user = User.objects.get(username=user_name)
+        context['user'] = user
         context['posts'] = Post.objects.filter(user=user).order_by('-created')
         return context
