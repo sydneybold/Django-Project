@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>@{{ user.username }} | Instagram</title>
+{% endblock %}
+
+{% block container %}
+  <div class="container">
+    <div class="row">
+      <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+        <img src="{{ user.profile.picture.url }}" alt="@{{ user.username }}" class="rounded img-fluid" />
+      </div>
+      <div class="col-8 col-sm-8 col-md-9 col-lg-10 col-xl-10 ">
+        <h2 class="mb-3">{{ user.first_name }} {{ user.last_name }}</h2>
+        {% if user == request.user %}
+          <a href="{% url "users:update_profile" user.pk %}" class="btn btn-sm btn-outline-info">Edit Profile</a>
+        {% else %}
+          <a href="" class="btn btn-sm btn-outline-info">Follow</a>
+        {% endif %}
+      </div>
+      <div class="row mt-3 ml-1">
+        <div class="col-12">
+          <span>{{ user.profile.biography }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+      <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+        <a href="{% url "posts:detail" post.pk %}">
+          <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="img-fluid border-double border-dark m-2"/>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
