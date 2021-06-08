@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Update Information</title>
+{% endblock %}
+
+{% block container %}
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="card mx-auto mt-5" style="width: 600px;">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">Update Information</h4>
+          <form method="Post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Update</button>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
