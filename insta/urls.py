@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Users
-    # path('users/', include('users.urls')),
+    path('users/', include('users.urls')),
 
     # Posts
     path('', include('posts.urls', namespace="posts")),
